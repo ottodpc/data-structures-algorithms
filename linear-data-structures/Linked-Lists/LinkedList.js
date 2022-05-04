@@ -1,9 +1,12 @@
 const Node = require('./Node');
 
+// SECTION LinkedList data structure
+// NOTE Implementing a LinkedList class to handle external operations on the list, like adding and removing nodes
 class LinkedList {
   constructor() {
     this.head = null;
   }
+  // NOTE Method that adds a node to the head of the list
   addToHead(data) {
     const newHead = new Node(data);
 
@@ -13,7 +16,7 @@ class LinkedList {
       this.head.setNextNode(currentHead);
     }
   }
-
+  // NOTE Method that adds a node to the tail of the list
   addToTail(data) {
     // Initialy tail is equal to the head of the list
     let tail = this.head;
@@ -34,7 +37,7 @@ class LinkedList {
       tail.setNextNode(newHead);
     }
   }
-
+  // NOTE Method that removes the head of the list
   removeHead() {
     const removedHead = this.head;
     //check the list has a head.
@@ -47,6 +50,18 @@ class LinkedList {
     this.head = this.head.getNextNode();
     // return the removed linked list Head data
     return removedHead.data;
+  }
+
+  printList() {
+    let currentNode = this.head;
+    let output = '<head> ';
+
+    while (currentNode !== null) {
+      output += currentNode.data + ' ';
+      currentNode = currentNode.getNextNode();
+    }
+    output += '<tail>';
+    console.log(output);
   }
 }
 

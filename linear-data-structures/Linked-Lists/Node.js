@@ -1,3 +1,4 @@
+// NOTE  Using our Node class to hold the data and links between nodes
 class Node {
   constructor(data) {
     this.data = data;
