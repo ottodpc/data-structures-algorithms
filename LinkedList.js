@@ -34,6 +34,20 @@ class LinkedList {
       tail.setNextNode(newHead);
     }
   }
+
+  removeHead() {
+    const removedHead = this.head;
+    //check the list has a head.
+    if (removedHead === null) {
+      // There is nothing to return.
+      //  End of the method execution
+      return;
+    }
+    // remove it by setting the list’s head equal to the original head’s next node, and then return that original head.
+    this.head = this.head.getNextNode();
+    // return the removed linked list Head data
+    return removedHead.data;
+  }
 }
 
 module.exports = LinkedList;
