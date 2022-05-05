@@ -61,6 +61,32 @@ class DoublyLinkedList {
     }
     return removedTail.data;
   }
+
+  removeByData(data) {
+    let nodeToRemove;
+    let currentNode = this.head;
+    while (currentNode !== null) {
+      if (currentNode.data === data) {
+        nodeToRemove = currentNode;
+        break;
+      }
+      currentNode = currentNode.getNextNode();
+    }
+    if (!nodeToRemove) {
+      return null;
+    }
+  }
+
+  printList() {
+    let currentNode = this.head;
+    let output = '<head> ';
+    while (currentNode !== null) {
+      output += currentNode.data + ' ';
+      currentNode = currentNode.getNextNode();
+    }
+    output += '<tail>';
+    console.log(output);
+  }
 }
 
 module.exports = DoublyLinkedList;
