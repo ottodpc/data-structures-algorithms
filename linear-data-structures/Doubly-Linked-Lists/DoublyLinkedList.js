@@ -31,6 +31,36 @@ class DoublyLinkedList {
       this.head = newTail;
     }
   }
+
+  removeHead() {
+    const removedHead = this.head;
+    if (!removedHead) {
+      return;
+    }
+    this.head = removedHead.getNextNode();
+    if (this.head) {
+      this.head.setPreviousNode(null);
+    }
+    if (removedHead === this.tail) {
+      this.removeTail();
+    }
+    return removedHead.data;
+  }
+
+  removeTail() {
+    const removedTail = this.tail;
+    if (!removedTail) {
+      return;
+    }
+    this.tail = removedTail.getPreviousNode();
+    if (this.tail) {
+      this.tail.setNextNode(null);
+    }
+    if (removedTail === this.head) {
+      this.removeHead();
+    }
+    return removedTail.data;
+  }
 }
 
 module.exports = DoublyLinkedList;
