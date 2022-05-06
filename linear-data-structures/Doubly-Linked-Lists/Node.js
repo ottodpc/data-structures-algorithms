@@ -5,6 +5,7 @@ class Node {
     this.previous = null;
   }
 
+  // NOTE Setter
   setNextNode(node) {
     if (node instanceof Node || node === null) {
       this.next = node;
@@ -21,6 +22,7 @@ class Node {
     }
   }
 
+  // NOTE Getter
   getNextNode() {
     return this.next;
   }
