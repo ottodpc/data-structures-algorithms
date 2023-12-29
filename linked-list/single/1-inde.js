@@ -1,4 +1,4 @@
-class LinkedList {
+class SingleLinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
@@ -109,7 +109,7 @@ class LinkedList {
   }
 }
 
-const linkedList1 = new LinkedList();
+const linkedList1 = new SingleLinkedList();
 linkedList1.append(1);
 linkedList1.append("my");
 linkedList1.append(3);
