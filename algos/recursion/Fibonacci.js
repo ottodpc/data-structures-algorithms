@@ -9,6 +9,12 @@ function fibonacciIterative(n) {
   }
   return arr[n];
 }
-fibonacciIterative(3);
-fibonacciIterative(5);
-fibonacciIterative(8);
+
+function fibonacciRecursive(n) {
+  // O(2^n)
+  if (n < 2) return n;
+  return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+}
+
+console.log("fibonacciIterative(8) :>> ", fibonacciIterative(8));
+console.log("fibonacciRecursive(8) :>> ", fibonacciRecursive(8));
