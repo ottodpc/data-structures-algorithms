@@ -37,3 +37,63 @@ let exDFSGraph = [
 ];
 
 console.log("dfs(exDFSGraph, 1) :>> ", dfs(exDFSGraph, 1));
+
+// in order dfs
+// Time complexity: O(n)
+// Space complexity: O(n)
+function inOrderDFS(tree, root) {
+  if (root === null) return;
+  inOrderDFS(tree, root.left);
+  console.log("root.value :>> ", root.value);
+  inOrderDFS(tree, root.right);
+}
+
+// pre order dfs
+// Time complexity: O(n)
+// Space complexity: O(n)
+function preOrderDFS(tree, root) {
+  if (root === null) return;
+  console.log("root.value :>> ", root.value);
+  preOrderDFS(tree, root.left);
+  preOrderDFS(tree, root.right);
+}
+
+// post order dfs
+// Time complexity: O(n)
+// Space complexity: O(n)
+function postOrderDFS(tree, root) {
+  if (root === null) return;
+  postOrderDFS(tree, root.left);
+  postOrderDFS(tree, root.right);
+  console.log("root.value :>> ", root.value);
+}
+
+const tree = {
+  value: 8,
+  left: {
+    value: 4,
+    left: {
+      value: 3,
+      left: null,
+      right: null,
+    },
+    right: {
+      value: 5,
+      left: null,
+      right: null,
+    },
+  },
+  right: {
+    value: 10,
+    left: null,
+    right: {
+      value: 20,
+      left: null,
+      right: null,
+    },
+  },
+};
+
+console.log("inOrderDFS(tree, tree) :>> ", inOrderDFS(tree, tree));
+console.log("preOrderDFS(tree, tree) :>> ", preOrderDFS(tree, tree));
+console.log("postOrderDFS(tree, tree) :>> ", postOrderDFS(tree, tree));
