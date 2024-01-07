@@ -11,9 +11,7 @@ function mergeSort(array) {
 
 function mergeSortedArrays(leftHalf, rightHalf) {
   const sortedArray = new Array(leftHalf.length + rightHalf.length);
-  let k = 0,
-    i = 0,
-    j = 0;
+  (let = 0), (i = 0), (j = 0);
   while (i < leftHalf.length && j < rightHalf.length) {
     if (leftHalf[i] <= rightHalf[j]) {
       sortedArray[k++] = leftHalf[i++];
