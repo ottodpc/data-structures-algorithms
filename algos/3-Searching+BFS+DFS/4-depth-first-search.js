@@ -48,7 +48,7 @@ function inOrderDFS(tree, root) {
   inOrderDFS(tree, root.right);
 }
 
-// pre order dfs
+// pre order dfs: usefull for making deep copies of a tree
 // Time complexity: O(n)
 // Space complexity: O(n)
 function preOrderDFS(tree, root) {
@@ -58,7 +58,7 @@ function preOrderDFS(tree, root) {
   preOrderDFS(tree, root.right);
 }
 
-// post order dfs
+// post order dfs: usefull for deleting a tree
 // Time complexity: O(n)
 // Space complexity: O(n)
 function postOrderDFS(tree, root) {
